@@ -7,7 +7,6 @@ const app = express();
 let server;
 
 // setup cors.
-
 app.use(
   cors({
     origin: "*",
@@ -17,11 +16,9 @@ app.use(
 );
 
 // setup body parser.
-
 app.use(body.json({ limit: "100kb" }));
 
 // load all routes.
-
 app.use("/recipes", require("./routes/recipes"));
 
 async function startServer() {
@@ -39,7 +36,9 @@ async function startServer() {
 
 function stop() {
   console.log("Stopping server");
-  server.close();
+  if (server) {
+    server.close();
+  }
 }
 
 export { server, startServer, stop };
