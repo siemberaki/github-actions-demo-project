@@ -2,7 +2,7 @@
   "name": "recipe-api",
   "version": "1.2.2",
   "description": "Node JS API for Recipes",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "jest",
     "dev": "npm run start --stage local",
@@ -13,6 +13,9 @@
   },
   "author": "Tom Shaw",
   "license": "ISC",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.24.4",
     "@babel/preset-env": "^7.24.4",

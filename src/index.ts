@@ -27,7 +27,7 @@ app.use("/recipes", require("./routes/recipes"));
 async function startServer() {
   try {
     // Load express app to listen on config port.
-    const port = 3000
+    const port = process.env.PORT || 3000
     server = app.listen(port, () => {
       console.log(`Service ready on :${port}`)
     });
@@ -44,4 +44,5 @@ function stop() {
 
 export { server, startServer, stop };
 
-startServer();
+// For Vercel serverless deployment
+export default app;
