@@ -1,6 +1,10 @@
 import request from "supertest";
 import { server, startServer, stop } from "../src/index";
 
+beforeAll(async () => {
+  await startServer();
+});
+
 afterAll(() => {
   stop();
 });
